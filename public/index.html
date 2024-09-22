@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หมากหนีบ</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</head>
+<body>
+  <div id="loginPage">
+    <h2>Login to Play Makneep</h2>
+    <button id="guestLoginButton">Login as Guest</button>
+    <div id="googleSignInButton"></div>
+  </div>
+  <div id="playOptions" style="display: none;">
+    <h2>Select Play Mode</h2>
+    <button id="playWithAIButton">Play Against AI</button>
+    <button id="playMultiplayerButton">Play Multiplayer (Server)</button>
+    <button id="howToPlayButton">How to Play</button>
+    <button id="googleLogoutButton" style="position: absolute; bottom: 50px; right: 10px;">Logout</button>
+    <button id="historyButton" style="position: absolute; bottom: 10px; right: 10px;">History</button>
+  </div>
+  <div id="multiplayerOptions" style="display:none;">
+    <h2>Create Or Join Room Multiplayer</h2>
+    <button id="backToPlayOptionsFromMultiplayer">Back</button>
+    <button id="createRoomButton">Create Room</button>
+    <input id="roomIdInput" type="text" placeholder="Enter Room ID">
+    <button id="joinRoomButton">Join Room</button>
+    <div id="roomList"></div>
+  </div>
+  <div id="gameContainer" style="display: none;">
+    <button id="backToMultiplayerFromGame">Back</button>
+    <div id="roomName" class="room-name"></div>
+    <div id="capturedBlackPieces" class="captured-pieces">BLACK PLAYER:</div>
+    <div id="gameWrapper">
+      <div class="coordinate-row">
+        <div class="coordinate-top"></div>
+      </div>
+      <div class="coordinate-col">
+        <div class="coordinate-left"></div>
+        <div id="game"></div>
+        <div class="coordinate-right"></div>
+      </div>
+      <div class="coordinate-row">
+        <div class="coordinate-bottom"></div>
+      </div>
+    </div>
+    <div id="capturedWhitePieces" class="captured-pieces">WHITE PLAYER:</div>
+    <div id="colorSelectButtons" style="display: none;">
+      <button class="color-select" data-color="w">Select White</button>
+      <button class="color-select" data-color="b">Select Black</button>
+    </div>
+    <div id="colorSchemeButtons">
+      <button class="color-scheme" data-scheme="default">Default</button>
+      <button class="color-scheme" data-scheme="color1">Color 1</button>
+      <button class="color-scheme" data-scheme="color2">Color 2</button>
+      <button class="color-scheme" data-scheme="color3">Color 3</button>
+    </div>
+  </div>
+  <div id="moveHistoryContainer" style="display: none;">
+    <div id="timers">
+      <span id="whiteTimer">White: 05:00 </span>
+      <span id="turnIndicator" class="turn-indicator"></span>
+      <span id="blackTimer">Black: 05:00</span>
+    </div>
+    <div id="moveHistory" class="move-history"></div>
+    <div id="buttons">
+      <button id="resetButton">Reset Game</button>
+      <button id="prevMoveButton">Previous Move</button>
+      <button id="nextMoveButton">Next Move</button>
+      <button id="resignButton">Surrender</button>
+    </div>
+    <button id="acceptResetButton" style="display: none;">Accept Reset</button>
+    <button id="pgnButton">PGN</button>
+    <div id="chatContainer">
+      <div id="chatDisplay"></div>
+      <div id="chatInputContainer">
+        <input id="chatInput" type="text" placeholder="Type your message...">
+        <button id="chatSendButton">Send</button>
+      </div>
+    </div>
+  </div>
+  <div id="howToPlayModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="assets/How_to_play.png" alt="How to Play" style="width: 100%;">
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js" type="module"></script>
+</body>
+</html>

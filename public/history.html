@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="backButton" style="position: absolute; top: 10px; left: 10px; z-index: 2;">Back</button>
+  <div style="position: fixed; width: 100%; background-color: #f0f0f0; z-index: 1; top: 0; padding-top: 20px;">
+    <h1 style="text-align: center;">Game History</h1>
+    <div style="text-align: center; margin-top: 20px;">
+      <input type="text" id="searchBar" placeholder="Search by player name or date" style="width: 300px; padding: 5px;">
+      <button id="searchButton" style="padding: 5px 10px;">Search</button>
+    </div>
+  </div>
+  <div style="margin-top: 160px; height: calc(100vh - 160px); overflow-y: auto;">
+    <table id="historyTable" border="1" style="width: 100%; text-align: center;">
+      <thead style="position: sticky; top: 0; background-color: #a8cdee;">
+        <tr>
+          <th>Player Names</th>
+          <th>Wins-Losses-Draws-Surrenders</th>
+          <th>Date</th>
+          <th>Last Match Time</th>
+          <th>PGN</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script src="history.js" type="module"></script>
+</body>
+</html>

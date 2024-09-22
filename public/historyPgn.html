@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History PGN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px;
+        }
+        #pgnContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #000;
+            padding: 20px;
+            margin-right: 20px;
+            width: 300px; 
+            height: 400px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        #pgnText {
+            margin-bottom: 20px;
+        }
+        #pgnBoardContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pgnContainer">
+        <h1>Game PGN Viewer</h1>
+        <div id="pgnText"></div>
+        <div id="pgnButtons">
+            <button id="prevMoveButton">Previous Move</button>
+            <button id="nextMoveButton">Next Move</button>
+            <button id="exportPgnButton">TXT</button>
+        </div>
+    </div>
+    <div id="pgnBoardContainer">
+        <h2>Board</h2>
+        <div id="pgnBoard" class="board"></div>
+    </div>
+    <script src="historyPgn.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PGN Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="pgnContainer">
+    <button id="backToGameButton">Back to Game</button>
+    <div id="pgnBoard" class="board"></div>
+    <div id="pgnButtons">
+      <button id="prevMoveButton">Previous Move</button>
+      <button id="nextMoveButton">Next Move</button>
+    </div>
+    <pre id="pgnText"></pre>
+    <button id="exportPgnButton">TXT</button>
+  </div>
+  <script src="pgn.js" type="module"></script>
+</body>
+</html>

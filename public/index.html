@@ -14,6 +14,7 @@
     <h2>Login to Play Makneep</h2>
     <button id="guestLoginButton">Login as Guest</button>
     <div id="googleSignInButton"></div>
+    <button id="aboutButton" style="position: absolute; bottom: 10px; right: 10px;">About</button>
   </div>
   <div id="playOptions" style="display: none;">
     <h2>Select Play Mode</h2>
@@ -91,5 +92,11 @@
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="client.js" type="module"></script>
+
+  <script>
+    document.getElementById('aboutButton').addEventListener('click', function() {
+      window.location.href = 'about.html';
+    });
+  </script>
 </body>
 </html>
